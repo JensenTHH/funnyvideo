@@ -44,14 +44,19 @@
             z-index: 1000000000000;
             background: rgb(77, 77, 77);
         }
-        .w3-sidebar{
+
+        .w3-sidebar {
             background: rgb(117, 117, 117);
-            color:white;
-            position:absolute;
-            top:0;
+            color: white;
+            position: absolute;
+            top: 0;
             left: 0;
             bottom: 0;
-            height:100vh;
+            height: 100vh;
+        }
+
+        .active {
+            background: rgb(235, 224, 224)
         }
     </style>
 </head>
@@ -86,18 +91,23 @@
                 { url: './video/hai12.mp4', name: "Hài 12" },
 
             ],
-            video = document.querySelector('video'),
-            activeVideoUrl = videoStorage[Math.round(Math.random() * (videoStorage.length - 1))];
-           
+                video = document.querySelector('video'),
+                activeVideoUrl = videoStorage[Math.round(Math.random() * (videoStorage.length - 1))];
+
 
             video.setAttribute('src', activeVideoUrl.url);
             video.autoplay = true;
             var nav = $('.w3-sidebar')
 
             videoStorage.forEach(element => {
-                var html = `<a onclick="playVideo('`+element.url+`')" class="w3-bar-item w3-button">` + element.name + `</a>`
+                var html = `<a onclick="playVideo('` + element.url + `')" class="w3-bar-item w3-button">` + element.name + `</a>`
                 nav.append(html)
             });
+          
+            $(".w3-bar-item").click(function () {
+                $('.w3-bar-item').removeClass("active");
+                $(this).addClass("active");
+            })
             function playVideo(index) {
                 video.setAttribute('src', index);
                 video.autoplay = true;

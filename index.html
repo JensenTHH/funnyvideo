@@ -53,11 +53,26 @@
             left: 0;
             bottom: 0;
             height: 100vh;
+            width: 250px !important;
+            overflow: hidden;
         }
 
         .active {
             background: rgb(235, 224, 224);
             color:black
+        }
+        .w3-bar-item{
+            margin: 0 1rem;
+        }
+        .w3-bar-item2{
+            float: right;
+            margin:1rem;
+            background: rgb(228, 226, 226);
+            color: black;
+            border-radius: 50%;
+        }
+        .w3-bar-item2:hover{
+            background: rgb(235, 224, 224);
         }
     </style>
 </head>
@@ -65,11 +80,11 @@
 <body>
     <div class="container">
         <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
-            <button class="w3-bar-item w3-button w3-large float-right" onclick="w3_close()">&times;</button>
+            <button class="w3-bar-item2 w3-button w3-large float-right" onclick="w3_close()">&times;</button>
 
         </div>
         <button id="openNav" class="w3-button  w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
+        <div class="w3-container" onclick="w3_close()">
             <video loop id="myVideo" autoplay controls>
                 <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type='video/mp4'>
                 Video not supported.

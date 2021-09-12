@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <style>
+        body {
+            background-color: #000000;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay controls loop id="myVideo">
+        <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type='video/mp4'>
+        Video not supported.
+    </video>
+    <script>
+        var videoStorage = [
+            './video/hai1.mp4',
+            './video/hai2.mp4',
+            './video/hai3.mp4',
+            './video/hai4.mp4',
+            './video/hai5.mp4',
+            './video/hai6.mp4',
+            './video/hai7.mp4',
+            './video/hai8.mp4',
+            './video/hai9.mp4',
+            './video/hai10.mp4',
+            './video/hai11.mp4',
+            './video/hai12.mp4',
+            
+        ],
+            video = document.querySelector('video'),
+        
+            activeVideoUrl = videoStorage[Math.round(Math.random() * (videoStorage.length - 1))];
+            console.log(activeVideoUrl)
+      
+       
+            video.setAttribute('src', activeVideoUrl);
+            video.autoplay = true;
+            
+            
+       
+    </script>
+</body>
+
+</html>

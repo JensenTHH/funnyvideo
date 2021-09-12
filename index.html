@@ -71,8 +71,12 @@
             color: black;
             border-radius: 50%;
         }
+        
         .w3-bar-item2:hover{
             background: rgb(235, 224, 224);
+        }
+        .btn{
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -83,7 +87,7 @@
             <button class="w3-bar-item2 w3-button w3-large float-right" onclick="w3_close()">&times;</button>
 
         </div>
-        <button id="openNav" class="w3-button  w3-xlarge" onclick="w3_open()">&#9776;</button>
+        <button id="openNav" class="w3-button btn w3-xlarge" onclick="w3_open()">&#9776;</button>
         <div class="w3-container" onclick="w3_close()">
             <video loop id="myVideo" autoplay controls>
                 <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type='video/mp4'>
